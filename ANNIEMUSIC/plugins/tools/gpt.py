@@ -24,7 +24,7 @@ async def chat_gpt(app, message):
 
         if len(message.command) < 2:
             # Reply with default message if no query provided
-            await message.reply_text("**Hello sir, I am maya. How can I help you today?**")
+            await message.reply_text("**Hello sir, I am friday. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
@@ -37,13 +37,13 @@ async def chat_gpt(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for GPT chat with user's name
-@app.on_message(filters.command(["aya"], prefixes=["m", "M"]))
+@app.on_message(filters.command(["riday"], prefixes=["f", "F"]))
 async def chat_arvis(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
         name = message.from_user.first_name
         if len(message.command) < 2:
-            await message.reply_text(f"**Hello {name}, I am maya. How can I help you today?**")
+            await message.reply_text(f"**Hello {name}, I am friday. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
@@ -55,13 +55,13 @@ async def chat_arvis(app, message):
         await message.reply_text(f"**Error**: {e}")
 
 # Command for ANNIE with user's name
-@app.on_message(filters.command(["egend"], prefixes=["l", "L"]))
+@app.on_message(filters.command(["ess"], prefixes=["m", "M"]))
 async def chat_annie(app, message):
     try:
         await app.send_chat_action(message.chat.id, ChatAction.TYPING)
         name = message.from_user.first_name
         if len(message.command) < 2:
-            await message.reply_text(f"**Hello {name}, I am legengPA. How can I help you today?**")
+            await message.reply_text(f"**Hello {name}, I am mess. How can I help you today?**")
         else:
             query = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
